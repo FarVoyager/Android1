@@ -1,4 +1,20 @@
 <resources>
     <string name="app_name">Work1.1</string>
-    <string name="is_equal">Равно?</string>
+    <string name="is_equal">НАЖМИ</string>
+    <string name="result">Результат</string>
+    <string name="editText1">Поле ввода</string>
+    <string name="switch1">Переключатель</string>
+    <string name="checkBox1">Галочка</string>
+    <string name="button2">НАЖМИ СЮДА ТОЖЕ</string>
+
+    <string name="text">Text Input</string>
+    <string name="phone">Phone Input</string>
+    <string name="number">Number Input</string>
+    <string name="textPersonName">Person Name Input</string>
+    <string name="textPassword">Password Input</string>
+    <string name="textEmail">Email Input</string>
+
+    <string name="emsExpl">ems в TextView задает ширину поля, равную ширине определенного кол-ва символов "M". Т.е. если ems = 5, то ширина поля будет равна ширине надписи "МММММ".</string>
+
+
 </resources>

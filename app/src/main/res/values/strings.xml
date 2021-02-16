@@ -6,4 +6,13 @@
     <string name="switch1">Переключатель</string>
     <string name="checkBox1">Галочка</string>
     <string name="button2">НАЖМИ СЮДА ТОЖЕ</string>
+
+    <string name="text">Text Input</string>
+    <string name="phone">Phone Input</string>
+    <string name="number">Number Input</string>
+    <string name="textPersonName">Person Name Input</string>
+    <string name="textPassword">Password Input</string>
+    <string name="textEmail">Email Input</string>
+
+
 </resources>

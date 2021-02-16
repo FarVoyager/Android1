@@ -14,5 +14,7 @@
     <string name="textPassword">Password Input</string>
     <string name="textEmail">Email Input</string>
 
+    <string name="emsExpl">ems в TextView задает ширину поля, равную ширине определенного кол-ва символов "M". Т.е. если ems = 5, то ширина поля будет равна ширине надписи "МММММ".</string>
+
 
 </resources>

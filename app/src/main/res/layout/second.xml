@@ -15,15 +15,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
+        android:importantForAutofill="no"
         android:inputType="phone"
-        android:text="@string/phone"
-        android:importantForAutofill="no" />
+        android:text="@string/phone" />
 
     <EditText
         android:id="@+id/textViewPersonName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
         android:inputType="textPersonName"
         android:text="@string/textPersonName" />
 
@@ -58,4 +57,12 @@
         android:ems="10"
         android:inputType="textEmailAddress"
         android:text="@string/textEmail" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="@string/emsExpl"
+        android:textColor="#000000"
+        android:textStyle="bold" />
 </LinearLayout>

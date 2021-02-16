@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">Work1.1</string>
-    <string name="is_equal">Равно?</string>
+    <string name="is_equal">НАЖМИ</string>
+    <string name="result">Результат</string>
+    <string name="editText1">Поле ввода</string>
+    <string name="switch1">Переключатель</string>
+    <string name="checkBox1">Галочка</string>
+    <string name="button2">НАЖМИ СЮДА ТОЖЕ</string>
 </resources>

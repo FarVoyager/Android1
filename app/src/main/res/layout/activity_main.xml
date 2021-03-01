@@ -224,5 +224,13 @@
 
         </LinearLayout>
 
+        <Button
+            android:id="@+id/buttonCounter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="buttonCounter1_onClick"
+            android:text="@string/counter_1" />
+
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

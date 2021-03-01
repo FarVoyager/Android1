@@ -19,8 +19,9 @@
     <string name="buttClear">CL</string>
     <string name="buttResult">=</string>
     <string name="textViewResult"></string>
-
-
+    <string name="_0">0</string>
+    <string name="counter_1">Counter on click</string>
+    <string name="counter_2">Counter click listener</string>
 
 
 </resources>

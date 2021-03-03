@@ -15,10 +15,13 @@ import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
-    private int counter1 = 0;       // первый счетчик
-    private int counter2 = 0;       // второй счетчик
+    private final static String keyCounters = "Counters";
+
+    private Counters counters;
+
     private TextView textCounter1;  // пользовательский элемент 1-го счетчика
     private TextView textCounter2;  // пользовательский элемент 2-го счетчика
+    private TextView textCounter4;  // пользовательский элемент 4-го счетчика
     private final static String TAG = "[LifeCycleActivity]";
 
     @Override
@@ -26,40 +29,50 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.theme_1_3);
 
-        //Логирование
-        String instanceState;
-        if (savedInstanceState == null) {
-            instanceState = "Первый запуск!";
-        } else {
-            instanceState = "Повторный запуск!";
-        }
-        makeToast(instanceState + " - onCreate()");
-
+        counters = new Counters();
         initView();
     }
 
     // Получить пользовательский элемент по идентификатору
     private void initView() {
-        textCounter1 = findViewById(R.id.textViewResult);
+        textCounter1 = findViewById(R.id.textView1);
         textCounter2 = findViewById(R.id.textView2);
+        textCounter4 = findViewById(R.id.textView4);
+
         initButton2ClickListener();
+        initButton4ClickListener();
     }
 
 
     private void initButton2ClickListener() {
         Button button2 = findViewById(R.id.button2);
         button2.setOnClickListener(v -> {
-            counter2++;
-            setTextCounter(textCounter2, counter2);
+            counters.incrementCounter2();
+            setTextCounter(textCounter2, counters.getCounter2());
         });
     }
 
 
+    private void initButton4ClickListener(){
+        Button button4 = findViewById(R.id.button4);
+        button4.setOnClickListener(button4ClickListener);
+    }
+
     // Обработка кнопки через атрибут onClick в макете
     public void buttonCounter1_onClick(View view) {
-        counter1++;
-        setTextCounter(textCounter1, counter1);
+        counters.incrementCounter1();
+        setTextCounter(textCounter1, counters.getCounter1());
     }
+
+
+
+    public View.OnClickListener button4ClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            counters.incrementCounter4();
+            setTextCounter(textCounter4, counters.getCounter4());
+        }
+    };
 
     // Установить текст на TextView
     private void setTextCounter(TextView textCounter, int counter){
@@ -69,49 +82,55 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        makeToast("onStart()");
     }
 
     @Override
-    protected void onRestoreInstanceState(Bundle saveInstanceState) {
-        super.onRestoreInstanceState(saveInstanceState);
-        makeToast("Повторный запуск!! - onRestoreInstanceState()");
+    protected void onSaveInstanceState(Bundle instanceState) {
+        super.onSaveInstanceState(instanceState);
+
+        instanceState.putParcelable(keyCounters, counters);
+
+
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle instanceState) {
+        super.onRestoreInstanceState(instanceState);
+
+        counters = (Counters) instanceState.getParcelable(keyCounters);
+        setTextCounters();
+    }
+
+    // Отображение данных на экране
+    private void setTextCounters(){
+        setTextCounter(textCounter1, counters.getCounter1());
+        setTextCounter(textCounter2, counters.getCounter2());
+        setTextCounter(textCounter4, counters.getCounter4());
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        makeToast("onResume()");
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        makeToast("onPause()");
-    }
-
-    @Override
-    protected void onSaveInstanceState(Bundle saveInstanceState) {
-        super.onSaveInstanceState(saveInstanceState);
-        makeToast("onSaveInstanceState()");
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        makeToast("onStop()");
     }
 
     @Override
     protected void onRestart() {
         super.onRestart();
-        makeToast("onRestart()");
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        makeToast("onDestroy()");
     }
 
 

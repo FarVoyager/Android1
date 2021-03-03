@@ -16,6 +16,16 @@
 
 
         <TextView
+            android:id="@+id/textViewExpression"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+
+            android:background="#FFFFFF"
+            android:backgroundTint="#DAD7D7"
+            android:text="@string/textViewResult"
+            android:textSize="60sp" />
+
+        <TextView
             android:id="@+id/textViewResult"
             android:layout_width="match_parent"
             android:layout_height="100dp"
@@ -223,14 +233,5 @@
                 android:text="@string/buttResult" />
 
         </LinearLayout>
-
-        <Button
-            android:id="@+id/buttonCounter"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="buttonCounter1_onClick"
-            android:text="@string/counter_1" />
-
-
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

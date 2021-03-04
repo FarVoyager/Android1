@@ -3,28 +3,28 @@ package chvirov.com.example.work11;
 import androidx.appcompat.app.AppCompatActivity;
 
 
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
-import android.util.Log;
 
-import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.Locale;
 
 
 public class MainActivity extends AppCompatActivity {
 
+
+
     private TextView textViewResult;
     private TextView textViewExpression;
     private String overallText = "";
     private String textForValues = "";
-
-    private char action = ' ';
-    protected boolean isAction = false;
     protected double calculationResult;
-    protected boolean isActionPressed;
+    private char action = ' ';
+    protected boolean isDot = false;
+    protected boolean isActionLast = false;
+    protected boolean isResultLast = false;
 
     protected double valueBuffer = 0;
     private String textBuffer = "";
@@ -47,127 +47,58 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-//        isActionPressed = false;
+
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         textViewResult = findViewById(R.id.textViewResult);
         textViewExpression = findViewById(R.id.textViewExpression);
         Button buttonResult = findViewById(R.id.buttonResult);
 
-
         // Обработка нажатия на кнопку РАВНО
         buttonResult.setOnClickListener(v -> {
 
-            value2 = valueBuffer;
+            if (isResultLast) {
+                //Do nothing
+            } else {
 
-            if (action == '+') {
-                String[] values = overallText.split("\\+");
-                calculationResult = value1 + value2;
+                valueBuffer = Float.parseFloat(textForValues);
+                value2 = valueBuffer;
 
-                String calculationResultStr = Double.toString(calculationResult);
+                if (action == '+') {
 
-//                if (calculationResult % 1 == 0) {
-//                    String[] FloatToIntArr = calculationResultStr.split(".");
-//                    String FloatToIntText = FloatToIntArr[0];
-//                    textViewResult.setText(String.format(Locale.getDefault(), FloatToIntText));
-//                } else {
-                    textViewResult.setText(String.format(Locale.getDefault(), calculationResultStr));
-//                }
+                    calculationResult = value1 + value2;
+                    updateViewsOnResult();
 
-                textViewResult.setText(String.format(Locale.getDefault(), calculationResultStr));
-                textViewExpression.setText(textViewResult.getText());
-                overallText = textViewResult.getText().toString();
-                if (calculationResult < 0) {
-                    overallText = textViewResult.getText().subSequence(1, overallText.length() - 1).toString();
-                } else {
-                    overallText = textViewResult.getText().toString();
-                }
+                } else if (action == '-') {
 
-            } else if (action == '-') {
+                    calculationResult = value1 - value2;
+                    updateViewsOnResult();
 
-                String[] values = overallText.split("-");
-                calculationResult = value1 - value2;
-                String calculationResultStr = Double.toString(calculationResult);
+                } else if (action == '*') {
 
-//                if (calculationResult % 1 != 0) {
-//                    String[] FloatToIntArr = calculationResultStr.split(".");
-//                    String FloatToIntText = FloatToIntArr[0];
-//                    textViewResult.setText(String.format(Locale.getDefault(), FloatToIntText));
-//                }
+                    calculationResult = value1 * value2;
+                    updateViewsOnResult();
 
-                textViewResult.setText(String.format(Locale.getDefault(), calculationResultStr));
-                textViewExpression.setText(textViewResult.getText());
-                overallText = textViewResult.getText().toString();
-                if (calculationResult < 0) {
-                    overallText = textViewResult.getText().subSequence(1, overallText.length()).toString();
-                } else {
-                    overallText = textViewResult.getText().toString();
-                }
+                } else if (action == '/') {
 
-            } else if (action == '*') {
+                    calculationResult = value1 / value2;
+                    updateViewsOnResult();
 
-                String[] values = overallText.split("\\*");
-                calculationResult = value1 * value2;
-                String calculationResultStr = Double.toString(calculationResult);
+                } else if (action == '°') {
 
-//                if (calculationResult % 1 != 0) {
-//                    String[] FloatToIntArr = calculationResultStr.split(".");
-//                    String FloatToIntText = FloatToIntArr[0];
-//                    textViewResult.setText(String.format(Locale.getDefault(), FloatToIntText));
-//                }
+                    calculationResult = value2 * 100 / value1;
+                    updateViewsOnResult();
 
-                textViewResult.setText(String.format(Locale.getDefault(), calculationResultStr));
-                textViewExpression.setText(textViewResult.getText());
-                overallText = textViewResult.getText().toString();
-                if (calculationResult < 0) {
-                    overallText = textViewResult.getText().subSequence(1, overallText.length() - 1).toString();
-                } else {
-                    overallText = textViewResult.getText().toString();
-                }
-
-            } else if (action == '/') {
-
-                String[] values = overallText.split("/");
-                calculationResult = value1 / value2;
-                String calculationResultStr = Double.toString(calculationResult);
-
-//                if (calculationResult % 1 != 0) {
-//                    String[] FloatToIntArr = calculationResultStr.split(".");
-//                    String FloatToIntText = FloatToIntArr[0];
-//                    textViewResult.setText(String.format(Locale.getDefault(), FloatToIntText));
-//                }
-
-                textViewResult.setText(String.format(Locale.getDefault(), calculationResultStr));
-                textViewExpression.setText(textViewResult.getText());
-                overallText = textViewResult.getText().toString();
-                if (calculationResult < 0) {
-                    overallText = textViewResult.getText().subSequence(1, overallText.length() - 1).toString();
-                } else {
-                    overallText = textViewResult.getText().toString();
-                }
-
-            } else if (action == '°') {
-
-                String[] values = overallText.split("°");
-                calculationResult = value2 * 100 / value1;
-                String calculationResultStr = Double.toString(calculationResult);
-
-//                if (calculationResult % 1 != 0) {
-//                    String[] FloatToIntArr = calculationResultStr.split(".");
-//                    String FloatToIntText = FloatToIntArr[0];
-//                    textViewResult.setText(String.format(Locale.getDefault(), FloatToIntText));
-//                }
-
-                textViewResult.setText(String.format(Locale.getDefault(), calculationResultStr));
-                textViewExpression.setText(textViewResult.getText());
-                if (calculationResult < 0) {
-                    overallText = textViewResult.getText().subSequence(1, overallText.length() - 1).toString();
-                } else {
-                    overallText = textViewResult.getText().toString();
                 }
             }
 
+            textForValues = String.valueOf(calculationResult);
+            value2 = 0;
+
         });
+
 
 
         //связывание кнопок с макета с их экземплярами
@@ -188,11 +119,12 @@ public class MainActivity extends AppCompatActivity {
         Button buttonMultiply = findViewById(R.id.buttonMultiply);
         Button buttonDivide = findViewById(R.id.buttonDivide);
         Button buttonPercent = findViewById(R.id.buttonPercent);
+        Button buttonFloatingDot = findViewById(R.id.buttonPt);
 
         Button buttonClear = findViewById(R.id.buttonClear);
 
 
-        //Обработка нажатия на цифровые кнопки
+        // Обработка нажатия на цифровые кнопки
         button0.setOnClickListener(v -> {
             digitAssign(digit0);
         });
@@ -234,7 +166,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        //обработка нажатия на кнопки операций
+        // Обработка нажатия на кнопки операций
         buttonPlus.setOnClickListener(v -> {
 
             buttonOperation('+', "+");
@@ -260,40 +192,83 @@ public class MainActivity extends AppCompatActivity {
             overallText = "";
             textViewResult.setText("");
             textViewExpression.setText("");
+            value1 = 0;
+            value2 = 0;
+            textBuffer = "";
+            textForValues = "";
         });
 
-
+        buttonFloatingDot.setOnClickListener(v -> {
+            overallText = overallText + ".";
+            textViewExpression.setText(String.format(Locale.getDefault(), overallText));
+            textBuffer = textBuffer + ".";
+            isDot = true;
+        });
     }
 
-    //добавление значения нажатой цифровой кнопки
-    private void digitAssign(String digit) {
-        if (overallText.equals("0") || textForValues.equals("0.0")) {
-            overallText = "";
-            textViewExpression.setText(overallText);
 
+    private void updateViewsOnResult() {
+
+        if (isDot) {
+            //Do nothing
+        } else {
+            overallText = String.valueOf(calculationResult);
+
+            if (calculationResult % 1 == 0) {
+                String[] arrDivider = overallText.split("\\.");
+                overallText = arrDivider[0];
+                textViewExpression.setText(String.format(Locale.getDefault(), arrDivider[0]));
+                textViewResult.setText(String.format(Locale.getDefault(), arrDivider[0]));
+            } else {
+                textViewExpression.setText(String.format(Locale.getDefault(), overallText));
+                textViewResult.setText(String.format(Locale.getDefault(), overallText));
+            }
+            textForValues = String.valueOf(calculationResult);
+            isDot = false;
+            isResultLast = true;
         }
-        textBuffer = textBuffer + digit;
-        textForValues = textBuffer;
-        overallText = overallText + digit;
-        textViewExpression.setText(String.format(Locale.getDefault(), overallText));
-        overallText = textViewExpression.getText().toString();
-        System.out.println(textForValues);
-        valueBuffer = Float.parseFloat(textForValues);
+    }
+
+    // Добавление значения нажатой цифровой кнопки
+    private void digitAssign(String digit) {
+
+        if (isResultLast) {
+            //Do nothing
+        } else {
+
+            if (overallText.equals("0") || textForValues.equals("0.0")) {
+                overallText = "";
+                textViewExpression.setText(overallText);
+            }
+
+            textBuffer = textBuffer + digit;
+            textForValues = textBuffer;
+            overallText = overallText + digit;
+            textViewExpression.setText(String.format(Locale.getDefault(), overallText));
+            isDot = false;
+            isActionLast = false;
+        }
     }
 
 
-    //добавление значения нажатой кнопки операции
+    // Добавление значения нажатой кнопки операции
     private void buttonOperation(char actionVarChar, String actionTextView) {
 
-        action = actionVarChar;
-        value1 = valueBuffer;
-        textForValues = "";
-        textBuffer = "";
-        overallText = overallText + actionTextView;
-        textViewExpression.setText(String.format(Locale.getDefault(), overallText));
-        isOperationPressed = 1;
+        if (isDot || isActionLast) {
+            //Do nothing
+        } else {
 
-
+            textViewExpression.setText(String.format(Locale.getDefault(), ""));
+            action = actionVarChar;
+            valueBuffer = Float.parseFloat(textForValues);
+            value1 = valueBuffer;
+            overallText = overallText + actionTextView;
+            textViewExpression.setText(String.format(Locale.getDefault(), overallText));
+            textBuffer = "";
+            textForValues = "";
+            isActionLast = true;
+            isResultLast = false;
+        }
     }
 
 

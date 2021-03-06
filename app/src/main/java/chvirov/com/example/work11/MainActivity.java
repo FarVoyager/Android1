@@ -15,7 +15,6 @@ import java.util.Locale;
 public class MainActivity extends AppCompatActivity {
 
 
-
     private TextView textViewResult;
     private TextView textViewExpression;
     private String overallText = "";
@@ -30,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
     private String textBuffer = "";
     protected double value1;
     protected double value2;
-    protected int isOperationPressed = 0;
 
 
     private final String digit1 = "1";
@@ -48,7 +46,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+
+//        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -98,7 +97,6 @@ public class MainActivity extends AppCompatActivity {
             value2 = 0;
 
         });
-
 
 
         //связывание кнопок с макета с их экземплярами
@@ -196,13 +194,21 @@ public class MainActivity extends AppCompatActivity {
             value2 = 0;
             textBuffer = "";
             textForValues = "";
+            isActionLast = false;
+            isResultLast = false;
+            isDot = false;
         });
 
         buttonFloatingDot.setOnClickListener(v -> {
-            overallText = overallText + ".";
-            textViewExpression.setText(String.format(Locale.getDefault(), overallText));
-            textBuffer = textBuffer + ".";
-            isDot = true;
+
+            if (isResultLast) {
+                //Do nothing
+            } else {
+                overallText = overallText + ".";
+                textViewExpression.setText(String.format(Locale.getDefault(), overallText));
+                textBuffer = textBuffer + ".";
+                isDot = true;
+            }
         });
     }
 
@@ -280,11 +286,41 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onSaveInstanceState(Bundle instanceState) {
         super.onSaveInstanceState(instanceState);
+
+        instanceState.putDouble("calculationResult", calculationResult);
+        instanceState.putString("textViewExpression", (textViewExpression.getText()).toString());
+        instanceState.putString("textViewResult", (textViewResult.getText()).toString());
+        instanceState.putBoolean("isActionLast", isActionLast);
+        instanceState.putBoolean("isResultLast", isResultLast);
+        instanceState.putBoolean("isDot", isDot);
+        instanceState.putChar("action", action);
+        instanceState.putString("textForValues", textForValues);
+        instanceState.putString("textBuffer", textBuffer);
+        instanceState.putString("overallText", overallText);
+        instanceState.getDouble("valueBuffer", valueBuffer);
+        instanceState.getDouble("value1", value1);
+        instanceState.getDouble("value2", value2);
+
     }
 
     @Override
     protected void onRestoreInstanceState(Bundle instanceState) {
         super.onRestoreInstanceState(instanceState);
+
+        calculationResult = instanceState.getDouble("calculationResult");
+        textViewExpression.setText(String.format(Locale.getDefault(), instanceState.getString("textViewExpression")));
+        textViewResult.setText(String.format(Locale.getDefault(), instanceState.getString("textViewResult")));
+        isActionLast = instanceState.getBoolean("isActionLast");
+        isResultLast = instanceState.getBoolean("isResultLast");
+        isDot = instanceState.getBoolean("isDot");
+        textForValues = instanceState.getString("textForValues");
+        textBuffer = instanceState.getString("textBuffer");
+        overallText = instanceState.getString("overallText");
+        valueBuffer = instanceState.getDouble("valueBuffer");
+        value1 = instanceState.getDouble("value1");
+        value2 = instanceState.getDouble("value2");
+
+
     }
 
     @Override

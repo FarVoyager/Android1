@@ -44,7 +44,7 @@
             android:clipToPadding="true"
             android:orientation="horizontal">
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/button1"
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/buttonLayoutHeightLandScape"
@@ -52,33 +52,33 @@
                 android:layout_marginStart="@dimen/buttonBaseMarginLandScape"
                 android:layout_marginEnd="@dimen/buttonBaseMarginLandScape"
                 android:layout_weight="1"
-                android:backgroundTint="#8E8D8D"
+                android:backgroundTint="@color/light_grey_buttons"
                 android:textSize="@dimen/buttonTextSizeLandScape"
                 android:text="@string/butt1" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/button2"
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/buttonLayoutHeightLandScape"
                 android:layout_marginStart="@dimen/buttonBaseMarginLandScape"
                 android:layout_marginEnd="@dimen/buttonBaseMarginLandScape"
                 android:layout_weight="1"
-                android:backgroundTint="#8E8D8D"
+                android:backgroundTint="@color/light_grey_buttons"
                 android:textSize="@dimen/buttonTextSizeLandScape"
                 android:text="@string/butt2" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/button3"
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/buttonLayoutHeightLandScape"
                 android:layout_marginStart="@dimen/buttonBaseMarginLandScape"
                 android:layout_marginEnd="@dimen/buttonBaseMarginLandScape"
                 android:layout_weight="1"
-                android:backgroundTint="#8E8D8D"
+                android:backgroundTint="@color/light_grey_buttons"
                 android:textSize="@dimen/buttonTextSizeLandScape"
                 android:text="@string/butt3" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonResult"
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/buttonLayoutHeightLandScape"
@@ -89,7 +89,7 @@
                 android:textSize="@dimen/buttonTextSizeLandScape"
                 android:text="@string/buttResult" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonDivide"
                 android:layout_width="wrap_content"
 
@@ -101,14 +101,14 @@
                 android:textSize="@dimen/buttonTextSizeLandScape"
                 android:text="@string/buttDivide" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonClear"
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/buttonLayoutHeightLandScape"
                 android:layout_marginStart="@dimen/buttonBaseMarginLandScape"
                 android:layout_marginEnd="@dimen/buttonBaseMarginLandScape"
                 android:layout_weight="1"
-                android:backgroundTint="#FF6F00"
+                android:backgroundTint="@color/orange"
                 android:textSize="@dimen/buttonTextSizeLandScape"
                 android:text="@string/buttClear" />
 
@@ -120,7 +120,7 @@
             android:layout_margin="@dimen/linearLayoutMarginLandScape"
             android:orientation="horizontal">
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/button4"
                 android:layout_width="wrap_content"
 
@@ -128,11 +128,11 @@
                 android:layout_marginStart="@dimen/buttonBaseMarginLandScape"
                 android:layout_marginEnd="@dimen/buttonBaseMarginLandScape"
                 android:layout_weight="1"
-                android:backgroundTint="#8E8D8D"
+                android:backgroundTint="@color/light_grey_buttons"
                 android:textSize="@dimen/buttonTextSizeLandScape"
                 android:text="@string/butt4" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/button5"
                 android:layout_width="wrap_content"
 
@@ -140,22 +140,22 @@
                 android:layout_marginStart="@dimen/buttonBaseMarginLandScape"
                 android:layout_marginEnd="@dimen/buttonBaseMarginLandScape"
                 android:layout_weight="1"
-                android:backgroundTint="#8E8D8D"
+                android:backgroundTint="@color/light_grey_buttons"
                 android:textSize="@dimen/buttonTextSizeLandScape"
                 android:text="@string/butt5" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/button6"
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/buttonLayoutHeightLandScape"
                 android:layout_marginStart="@dimen/buttonBaseMarginLandScape"
                 android:layout_marginEnd="@dimen/buttonBaseMarginLandScape"
                 android:layout_weight="1"
-                android:backgroundTint="#8E8D8D"
+                android:backgroundTint="@color/light_grey_buttons"
                 android:textSize="@dimen/buttonTextSizeLandScape"
                 android:text="@string/butt6" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonPt"
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/buttonLayoutHeightLandScape"
@@ -167,7 +167,7 @@
                 android:textSize="@dimen/buttonTextSizeLandScape"
                 android:textStyle="bold" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonMultiply"
                 android:layout_width="wrap_content"
 
@@ -179,7 +179,7 @@
                 android:textSize="@dimen/buttonTextSizeLandScape"
                 android:text="@string/buttMultiply" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonMinus"
                 android:layout_width="wrap_content"
 
@@ -199,51 +199,51 @@
             android:layout_margin="@dimen/linearLayoutMarginLandScape"
             android:orientation="horizontal">
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/button7"
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/buttonLayoutHeightLandScape"
                 android:layout_marginStart="@dimen/buttonBaseMarginLandScape"
                 android:layout_marginEnd="@dimen/buttonBaseMarginLandScape"
             android:layout_weight="1"
-            android:backgroundTint="#8E8D8D"
+            android:backgroundTint="@color/light_grey_buttons"
                 android:textSize="@dimen/buttonTextSizeLandScape"
             android:text="@string/butt7" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/button8"
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/buttonLayoutHeightLandScape"
                 android:layout_marginStart="@dimen/buttonBaseMarginLandScape"
                 android:layout_marginEnd="@dimen/buttonBaseMarginLandScape"
                 android:layout_weight="1"
-                android:backgroundTint="#8E8D8D"
+                android:backgroundTint="@color/light_grey_buttons"
                 android:textSize="@dimen/buttonTextSizeLandScape"
                 android:text="@string/butt8" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/button9"
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/buttonLayoutHeightLandScape"
                 android:layout_marginStart="@dimen/buttonBaseMarginLandScape"
                 android:layout_marginEnd="@dimen/buttonBaseMarginLandScape"
                 android:layout_weight="1"
-                android:backgroundTint="#8E8D8D"
+                android:backgroundTint="@color/light_grey_buttons"
                 android:textSize="@dimen/buttonTextSizeLandScape"
                 android:text="@string/butt9" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/button0"
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/buttonLayoutHeightLandScape"
                 android:layout_marginStart="@dimen/buttonBaseMarginLandScape"
                 android:layout_marginEnd="@dimen/buttonBaseMarginLandScape"
                 android:layout_weight="1"
-                android:backgroundTint="#8E8D8D"
+                android:backgroundTint="@color/light_grey_buttons"
                 android:textSize="@dimen/buttonTextSizeLandScape"
                 android:text="@string/butt0" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonPlus"
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/buttonLayoutHeightLandScape"
@@ -254,7 +254,7 @@
                 android:textSize="@dimen/buttonTextSizeLandScape"
                 android:text="@string/buttPlus" />
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonPercent"
                 android:layout_width="wrap_content"
                 android:layout_height="@dimen/buttonLayoutHeightLandScape"

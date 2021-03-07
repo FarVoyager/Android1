@@ -12,6 +12,8 @@
     <dimen name="linearLayoutMarginRightPortrait">10dp</dimen>
     <dimen name="textViewLayoutHeightPortrait">80dp</dimen>
     <dimen name="textViewTextSizePortrait">60sp</dimen>
+    <dimen name="textViewResultMarginBottomPortrait">55dp</dimen>
+    <dimen name="buttonTextSizePortrait">18sp</dimen>
 
     <dimen name="zeroButtonLayoutHeightLandScape">208dp</dimen>
     <dimen name="ptButtonLayoutHeightLandScape">62dp</dimen>

@@ -3,7 +3,6 @@ package chvirov.com.example.work11;
 import androidx.appcompat.app.AppCompatActivity;
 
 
-import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 
 import android.widget.Button;
@@ -11,6 +10,10 @@ import android.widget.TextView;
 
 import java.util.Locale;
 
+// Переделайте все кнопки на материал.
+// Все размеры и строки сделайте ресурсами.
+// Создайте стиль для своего приложения.
+// * Создайте светлую и тёмную тему для приложения.
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     private String textForValues = "";
     protected double calculationResult;
     private char action = ' ';
-    protected boolean isDot = false;
+    protected boolean isDotLast = false;
     protected boolean isActionLast = false;
     protected boolean isResultLast = false;
 
@@ -84,6 +87,7 @@ public class MainActivity extends AppCompatActivity {
 
                     calculationResult = value1 / value2;
                     updateViewsOnResult();
+
 
                 } else if (action == '°') {
 
@@ -187,16 +191,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         buttonClear.setOnClickListener(v -> {
-            overallText = "";
-            textViewResult.setText("");
-            textViewExpression.setText("");
-            value1 = 0;
-            value2 = 0;
-            textBuffer = "";
-            textForValues = "";
-            isActionLast = false;
-            isResultLast = false;
-            isDot = false;
+            clearAll();
         });
 
         buttonFloatingDot.setOnClickListener(v -> {
@@ -207,7 +202,7 @@ public class MainActivity extends AppCompatActivity {
                 overallText = overallText + ".";
                 textViewExpression.setText(String.format(Locale.getDefault(), overallText));
                 textBuffer = textBuffer + ".";
-                isDot = true;
+                isDotLast = true;
             }
         });
     }
@@ -215,7 +210,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void updateViewsOnResult() {
 
-        if (isDot) {
+        if (isDotLast) {
             //Do nothing
         } else {
             overallText = String.valueOf(calculationResult);
@@ -230,7 +225,7 @@ public class MainActivity extends AppCompatActivity {
                 textViewResult.setText(String.format(Locale.getDefault(), overallText));
             }
             textForValues = String.valueOf(calculationResult);
-            isDot = false;
+            isDotLast = false;
             isResultLast = true;
         }
     }
@@ -251,7 +246,7 @@ public class MainActivity extends AppCompatActivity {
             textForValues = textBuffer;
             overallText = overallText + digit;
             textViewExpression.setText(String.format(Locale.getDefault(), overallText));
-            isDot = false;
+            isDotLast = false;
             isActionLast = false;
         }
     }
@@ -260,7 +255,7 @@ public class MainActivity extends AppCompatActivity {
     // Добавление значения нажатой кнопки операции
     private void buttonOperation(char actionVarChar, String actionTextView) {
 
-        if (isDot || isActionLast) {
+        if (isDotLast || isActionLast) {
             //Do nothing
         } else {
 
@@ -275,6 +270,19 @@ public class MainActivity extends AppCompatActivity {
             isActionLast = true;
             isResultLast = false;
         }
+    }
+
+    private void clearAll() {
+        overallText = "";
+        textViewResult.setText("");
+        textViewExpression.setText("");
+        value1 = 0;
+        value2 = 0;
+        textBuffer = "";
+        textForValues = "";
+        isActionLast = false;
+        isResultLast = false;
+        isDotLast = false;
     }
 
 
@@ -292,7 +300,7 @@ public class MainActivity extends AppCompatActivity {
         instanceState.putString("textViewResult", (textViewResult.getText()).toString());
         instanceState.putBoolean("isActionLast", isActionLast);
         instanceState.putBoolean("isResultLast", isResultLast);
-        instanceState.putBoolean("isDot", isDot);
+        instanceState.putBoolean("isDotLast", isDotLast);
         instanceState.putChar("action", action);
         instanceState.putString("textForValues", textForValues);
         instanceState.putString("textBuffer", textBuffer);
@@ -312,7 +320,7 @@ public class MainActivity extends AppCompatActivity {
         textViewResult.setText(String.format(Locale.getDefault(), instanceState.getString("textViewResult")));
         isActionLast = instanceState.getBoolean("isActionLast");
         isResultLast = instanceState.getBoolean("isResultLast");
-        isDot = instanceState.getBoolean("isDot");
+        isDotLast = instanceState.getBoolean("isDotLast");
         textForValues = instanceState.getString("textForValues");
         textBuffer = instanceState.getString("textBuffer");
         overallText = instanceState.getString("overallText");

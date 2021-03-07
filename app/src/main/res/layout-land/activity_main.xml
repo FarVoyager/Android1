@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:textDirection="rtl"
+    tools:context=".MainActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="top"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+
+
+        <TextView
+            android:id="@+id/textViewExpression"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/textViewLayoutHeightLandScape"
+
+            android:background="#FFFFFF"
+            android:backgroundTint="#DAD7D7"
+            android:text="@string/textViewResult"
+            android:textSize="@dimen/textViewTextSizeLandScape" />
+
+        <TextView
+            android:id="@+id/textViewResult"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/textViewLayoutHeightLandScape"
+
+            android:background="#FFFFFF"
+            android:backgroundTint="#DAD7D7"
+            android:text="@string/textViewResult"
+            android:textSize="@dimen/textViewTextSizeLandScape" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/linearLayoutMarginLandScape"
+            android:clipToPadding="true"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button1"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/buttonLayoutHeightLandScape"
+
+                android:layout_marginStart="@dimen/buttonBaseMarginLandScape"
+                android:layout_marginEnd="@dimen/buttonBaseMarginLandScape"
+                android:layout_weight="1"
+                android:backgroundTint="@color/light_grey_buttons"
+                android:textSize="@dimen/buttonTextSizeLandScape"
+                android:text="@string/butt1" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button2"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/buttonLayoutHeightLandScape"
+                android:layout_marginStart="@dimen/buttonBaseMarginLandScape"
+                android:layout_marginEnd="@dimen/buttonBaseMarginLandScape"
+                android:layout_weight="1"
+                android:backgroundTint="@color/light_grey_buttons"
+                android:textSize="@dimen/buttonTextSizeLandScape"
+                android:text="@string/butt2" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button3"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/buttonLayoutHeightLandScape"
+                android:layout_marginStart="@dimen/buttonBaseMarginLandScape"
+                android:layout_marginEnd="@dimen/buttonBaseMarginLandScape"
+                android:layout_weight="1"
+                android:backgroundTint="@color/light_grey_buttons"
+                android:textSize="@dimen/buttonTextSizeLandScape"
+                android:text="@string/butt3" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonResult"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/buttonLayoutHeightLandScape"
+                android:layout_marginStart="@dimen/buttonBaseMarginLandScape"
+                android:layout_marginEnd="@dimen/buttonBaseMarginLandScape"
+                android:layout_weight="1"
+                android:backgroundTint="@color/teal_700"
+                android:textSize="@dimen/buttonTextSizeLandScape"
+                android:text="@string/buttResult" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonDivide"
+                android:layout_width="wrap_content"
+
+                android:layout_height="@dimen/buttonLayoutHeightLandScape"
+                android:layout_marginStart="@dimen/buttonBaseMarginLandScape"
+                android:layout_marginEnd="@dimen/buttonBaseMarginLandScape"
+                android:layout_weight="1"
+                android:backgroundTint="@color/teal_700"
+                android:textSize="@dimen/buttonTextSizeLandScape"
+                android:text="@string/buttDivide" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonClear"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/buttonLayoutHeightLandScape"
+                android:layout_marginStart="@dimen/buttonBaseMarginLandScape"
+                android:layout_marginEnd="@dimen/buttonBaseMarginLandScape"
+                android:layout_weight="1"
+                android:backgroundTint="@color/orange"
+                android:textSize="@dimen/buttonTextSizeLandScape"
+                android:text="@string/buttClear" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/linearLayoutMarginLandScape"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button4"
+                android:layout_width="wrap_content"
+
+                android:layout_height="@dimen/buttonLayoutHeightLandScape"
+                android:layout_marginStart="@dimen/buttonBaseMarginLandScape"
+                android:layout_marginEnd="@dimen/buttonBaseMarginLandScape"
+                android:layout_weight="1"
+                android:backgroundTint="@color/light_grey_buttons"
+                android:textSize="@dimen/buttonTextSizeLandScape"
+                android:text="@string/butt4" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button5"
+                android:layout_width="wrap_content"
+
+                android:layout_height="@dimen/buttonLayoutHeightLandScape"
+                android:layout_marginStart="@dimen/buttonBaseMarginLandScape"
+                android:layout_marginEnd="@dimen/buttonBaseMarginLandScape"
+                android:layout_weight="1"
+                android:backgroundTint="@color/light_grey_buttons"
+                android:textSize="@dimen/buttonTextSizeLandScape"
+                android:text="@string/butt5" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button6"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/buttonLayoutHeightLandScape"
+                android:layout_marginStart="@dimen/buttonBaseMarginLandScape"
+                android:layout_marginEnd="@dimen/buttonBaseMarginLandScape"
+                android:layout_weight="1"
+                android:backgroundTint="@color/light_grey_buttons"
+                android:textSize="@dimen/buttonTextSizeLandScape"
+                android:text="@string/butt6" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonPt"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/buttonLayoutHeightLandScape"
+                android:layout_marginStart="@dimen/buttonBaseMarginLandScape"
+                android:layout_marginEnd="@dimen/buttonBaseMarginLandScape"
+                android:layout_weight="1"
+                android:backgroundTint="@color/teal_700"
+                android:text="@string/buttPt"
+                android:textSize="@dimen/buttonTextSizeLandScape"
+                android:textStyle="bold" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonMultiply"
+                android:layout_width="wrap_content"
+
+                android:layout_height="@dimen/buttonLayoutHeightLandScape"
+                android:layout_marginStart="@dimen/buttonBaseMarginLandScape"
+                android:layout_marginEnd="@dimen/buttonBaseMarginLandScape"
+                android:layout_weight="1"
+                android:backgroundTint="@color/teal_700"
+                android:textSize="@dimen/buttonTextSizeLandScape"
+                android:text="@string/buttMultiply" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonMinus"
+                android:layout_width="wrap_content"
+
+                android:layout_height="@dimen/buttonLayoutHeightLandScape"
+                android:layout_marginStart="@dimen/buttonBaseMarginLandScape"
+                android:layout_marginEnd="@dimen/buttonBaseMarginLandScape"
+                android:layout_weight="1"
+                android:backgroundTint="@color/teal_700"
+                android:textSize="@dimen/buttonTextSizeLandScape"
+                android:text="@string/buttMinus" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/linearLayoutMarginLandScape"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button7"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/buttonLayoutHeightLandScape"
+                android:layout_marginStart="@dimen/buttonBaseMarginLandScape"
+                android:layout_marginEnd="@dimen/buttonBaseMarginLandScape"
+            android:layout_weight="1"
+            android:backgroundTint="@color/light_grey_buttons"
+                android:textSize="@dimen/buttonTextSizeLandScape"
+            android:text="@string/butt7" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button8"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/buttonLayoutHeightLandScape"
+                android:layout_marginStart="@dimen/buttonBaseMarginLandScape"
+                android:layout_marginEnd="@dimen/buttonBaseMarginLandScape"
+                android:layout_weight="1"
+                android:backgroundTint="@color/light_grey_buttons"
+                android:textSize="@dimen/buttonTextSizeLandScape"
+                android:text="@string/butt8" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button9"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/buttonLayoutHeightLandScape"
+                android:layout_marginStart="@dimen/buttonBaseMarginLandScape"
+                android:layout_marginEnd="@dimen/buttonBaseMarginLandScape"
+                android:layout_weight="1"
+                android:backgroundTint="@color/light_grey_buttons"
+                android:textSize="@dimen/buttonTextSizeLandScape"
+                android:text="@string/butt9" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button0"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/buttonLayoutHeightLandScape"
+                android:layout_marginStart="@dimen/buttonBaseMarginLandScape"
+                android:layout_marginEnd="@dimen/buttonBaseMarginLandScape"
+                android:layout_weight="1"
+                android:backgroundTint="@color/light_grey_buttons"
+                android:textSize="@dimen/buttonTextSizeLandScape"
+                android:text="@string/butt0" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonPlus"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/buttonLayoutHeightLandScape"
+                android:layout_marginStart="@dimen/buttonBaseMarginLandScape"
+                android:layout_marginEnd="@dimen/buttonBaseMarginLandScape"
+                android:layout_weight="1"
+                android:backgroundTint="@color/teal_700"
+                android:textSize="@dimen/buttonTextSizeLandScape"
+                android:text="@string/buttPlus" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonPercent"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/buttonLayoutHeightLandScape"
+                android:layout_marginStart="@dimen/buttonBaseMarginLandScape"
+                android:layout_marginEnd="@dimen/buttonBaseMarginLandScape"
+                android:layout_weight="1"
+                android:backgroundTint="@color/teal_700"
+                android:textSize="@dimen/buttonTextSizeLandScape"
+                android:text="@string/buttPercent" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

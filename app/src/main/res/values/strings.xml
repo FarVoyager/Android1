@@ -1,4 +1,28 @@
 <resources>
     <string name="app_name">Work1.1</string>
-    <string name="is_equal">Равно?</string>
+    <string name="butt1">1</string>
+    <string name="butt2">2</string>
+    <string name="butt3">3</string>
+    <string name="butt4">4</string>
+    <string name="butt5">5</string>
+    <string name="butt6">6</string>
+    <string name="butt7">7</string>
+    <string name="butt8">8</string>
+    <string name="butt9">9</string>
+    <string name="butt0">0</string>
+    <string name="buttPt">.</string>
+    <string name="buttPlus">+</string>
+    <string name="buttMinus">-</string>
+    <string name="buttMultiply">*</string>
+    <string name="buttDivide">/</string>
+    <string name="buttPercent">%</string>
+    <string name="buttClear">CL</string>
+    <string name="buttResult">=</string>
+    <string name="textViewResult"></string>
+    <string name="_0">0</string>
+    <string name="counter_1">Counter on click</string>
+    <string name="counter_2">Counter click listener</string>
+    <string name="counter_4">Counter listener field</string>
+
+
 </resources>

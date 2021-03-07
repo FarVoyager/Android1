@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="textCounter">20sp</dimen>
+    <dimen name="zeroButtonLayoutHeightPortrait">220dp</dimen>
+    <dimen name="ptButtonLayoutHeightPortrait">62dp</dimen>
+    <dimen name="buttonLayoutHeightPortrait">90dp</dimen>
+    <dimen name="buttonLayoutWidthPortrait">88dp</dimen>
+    <dimen name="buttonBottomLayoutWidthPortrait">66dp</dimen>
+    <dimen name="buttonBaseMarginPortrait">5dp</dimen>
+    <dimen name="linearLayoutMarginPortrait">5dp</dimen>
+    <dimen name="linearLayoutMarginLeftPortrait">10dp</dimen>
+    <dimen name="linearLayoutMarginRightPortrait">10dp</dimen>
+    <dimen name="textViewLayoutHeightPortrait">80dp</dimen>
+    <dimen name="textViewTextSizePortrait">60sp</dimen>
+    <dimen name="textViewResultMarginBottomPortrait">55dp</dimen>
+    <dimen name="buttonTextSizePortrait">18sp</dimen>
+
+    <dimen name="zeroButtonLayoutHeightLandScape">208dp</dimen>
+    <dimen name="ptButtonLayoutHeightLandScape">62dp</dimen>
+    <dimen name="buttonLayoutHeightLandScape">60dp</dimen>
+    <dimen name="buttonBaseMarginLandScape">5dp</dimen>
+    <dimen name="linearLayoutMarginLandScape">0dp</dimen>
+    <dimen name="textViewLayoutHeightLandScape">60dp</dimen>
+    <dimen name="textViewTextSizeLandScape">45sp</dimen>
+    <dimen name="buttonTextSizeLandScape">20sp</dimen>
+
+
+</resources>

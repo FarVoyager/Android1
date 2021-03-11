@@ -219,6 +219,7 @@
                 android:id="@+id/button0"
                 android:layout_width="@dimen/zeroButtonLayoutHeightPortrait"
                 android:layout_height="@dimen/buttonLayoutHeightPortrait"
+                android:layout_weight="3"
                 android:layout_marginLeft="@dimen/buttonBaseMarginPortrait"
                 android:layout_marginRight="@dimen/buttonBaseMarginPortrait"
                 android:backgroundTint="@color/light_grey_buttons"
@@ -227,6 +228,7 @@
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonPt"
+                android:layout_weight="1"
                 android:layout_width="@dimen/buttonBottomLayoutWidthPortrait"
                 android:layout_height="@dimen/buttonLayoutHeightPortrait"
                 android:layout_marginLeft="@dimen/buttonBaseMarginPortrait"
@@ -237,6 +239,7 @@
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/buttonResult"
+                android:layout_weight="1"
                 android:layout_width="@dimen/buttonBottomLayoutWidthPortrait"
                 android:layout_height="@dimen/buttonLayoutHeightPortrait"
                 android:layout_marginLeft="@dimen/buttonBaseMarginPortrait"

@@ -59,6 +59,7 @@ public class Settings extends AppCompatActivity implements Constants {
 
             setAppTheme(codeStyle);
 
+
             //попытка передачи данных в ActivityMain
             Intent intentResultTheme = new Intent();
             intentResultTheme.putExtra(keyToMainActivityTheme, codeStyle);

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorAccent">@color/orange</item>
+
+    </style>
+
+    <style name="NightTheme" parent="AppTheme">
+        <item name="android:background">@color/dark_grey</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textColorHint">@color/white</item>
+        <item name="android:textColorLink">@color/white</item>
+        <item name="android:textColorPrimary">@color/white</item>
+
+    </style>
+
+    <color name="dark_grey">#302E2E</color>
+</resources>

@@ -57,7 +57,6 @@ public class MainActivity extends AppCompatActivity implements Constants {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_main);
 
         textViewResult = findViewById(R.id.textViewResult);
@@ -223,16 +222,15 @@ public class MainActivity extends AppCompatActivity implements Constants {
     }
 
 
+    //установка темы, выбранной в activity Settings
     private void setActivityTheme() {
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
         themeIdentifier = sharedPref.getInt("themeIdentifier", 0);
-        System.out.println(themeIdentifier + " SOUT");
         if (themeIdentifier == 0) {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         } else if (themeIdentifier == 1) {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);        }
     }
-
 
     private void updateViewsOnResult() {
 
@@ -302,6 +300,7 @@ public class MainActivity extends AppCompatActivity implements Constants {
         }
     }
 
+    //метод для кнопки CLEAR
     private void clearAll() {
         overallText = "";
         textViewResult.setText("");
@@ -321,8 +320,7 @@ public class MainActivity extends AppCompatActivity implements Constants {
     @Override
     protected void onStart() {
         super.onStart();
-//        setActivityTheme();
-
+        setActivityTheme();
     }
 
 
@@ -369,7 +367,7 @@ public class MainActivity extends AppCompatActivity implements Constants {
     @Override
     protected void onResume() {
         super.onResume();
-        setActivityTheme();
+//        setActivityTheme();
     }
 
     @Override

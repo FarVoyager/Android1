@@ -5,6 +5,7 @@ package chvirov.com.example.work11;
 //  * Сделайте интент-фильтр для запуска калькулятора извне, а также напишите тестовое приложение, запускающее приложение-калькулятор.
 
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
@@ -23,6 +24,10 @@ import com.google.android.material.radiobutton.MaterialRadioButton;
 
 public class Settings extends AppCompatActivity implements Constants {
 
+    String KEY_LIGHT_RADIO_CHECKED = "KEY_LIGHT_RADIO_CHECKED";
+    String KEY_NIGHT_RADIO_CHECKED = "KEY_NIGHT_RADIO_CHECKED";
+    boolean isLightChecked;
+    boolean isNightChecked;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,12 +43,15 @@ public class Settings extends AppCompatActivity implements Constants {
         RadioButton lightThemeButton = findViewById(R.id.rbtnStandardTheme);
         RadioButton nightThemeButton = findViewById(R.id.rbtnDarkTheme);
 
+
         lightThemeButton.setOnClickListener(v -> {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
             SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
             SharedPreferences.Editor editor = sharedPref.edit();
             editor.putInt("themeIdentifier", 0);
             editor.apply();
+            isLightChecked = true;
+            isNightChecked = false;
             recreate();
         });
 
@@ -53,7 +61,24 @@ public class Settings extends AppCompatActivity implements Constants {
             SharedPreferences.Editor editor = sharedPref.edit();
             editor.putInt("themeIdentifier", 1);
             editor.apply();
+            isLightChecked = false;
+            isNightChecked = true;
             recreate();
         });
+    }
+
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putBoolean("LightThemeRadio", isLightChecked);
+        outState.putBoolean("NightThemeRadio", isNightChecked);
+    }
+
+    @Override
+    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        savedInstanceState.getBoolean(KEY_LIGHT_RADIO_CHECKED);
+        savedInstanceState.getBoolean(KEY_NIGHT_RADIO_CHECKED);
+
     }
 }

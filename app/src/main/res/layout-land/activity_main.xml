@@ -21,7 +21,7 @@
             android:id="@+id/textViewExpression"
             android:layout_width="match_parent"
             android:layout_height="@dimen/textViewLayoutHeightLandScape"
-
+            android:textColor="@color/light_grey_expression"
             android:background="#FFFFFF"
             android:backgroundTint="#DAD7D7"
             android:textSize="@dimen/textViewTextSizeLandScape" />
@@ -30,7 +30,7 @@
             android:id="@+id/textViewResult"
             android:layout_width="match_parent"
             android:layout_height="@dimen/textViewLayoutHeightLandScape"
-
+            android:textColor="@color/black"
             android:background="#FFFFFF"
             android:backgroundTint="#DAD7D7"
             android:textSize="@dimen/textViewTextSizeLandScape" />
@@ -262,6 +262,22 @@
                 android:backgroundTint="@color/teal_700"
                 android:textSize="@dimen/buttonTextSizeLandScape"
                 android:text="@string/buttPercent" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonSettings"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/buttonBaseMarginPortrait"
+                android:layout_marginRight="@dimen/buttonBaseMarginPortrait"
+                android:backgroundTint="@color/blue_btnSettings"
+                android:text="@string/buttSettings" />
 
         </LinearLayout>
 

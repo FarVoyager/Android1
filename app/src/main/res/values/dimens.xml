@@ -20,7 +20,7 @@
     <dimen name="buttonLayoutHeightLandScape">60dp</dimen>
     <dimen name="buttonBaseMarginLandScape">5dp</dimen>
     <dimen name="linearLayoutMarginLandScape">0dp</dimen>
-    <dimen name="textViewLayoutHeightLandScape">60dp</dimen>
+    <dimen name="textViewLayoutHeightLandScape">52dp</dimen>
     <dimen name="textViewTextSizeLandScape">45sp</dimen>
     <dimen name="buttonTextSizeLandScape">20sp</dimen>
 

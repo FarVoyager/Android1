@@ -6,11 +6,13 @@ package chvirov.com.example.work11;
 
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
@@ -22,16 +24,10 @@ import com.google.android.material.radiobutton.MaterialRadioButton;
 public class Settings extends AppCompatActivity implements Constants {
 
 
-    private static final String NameSharedPreference = "LOGIN";
-    private static final String appTheme = "APP_THEME";
-
-    private static final int AppThemeCode = 0;
-    private static final int DarkThemeCode = 1;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setTheme(getAppTheme(R.style.AppTheme));
+        setTheme(R.style.AppTheme);
         setContentView(R.layout.activity_settings);
 
         Button btnBack = findViewById(R.id.buttonBack);
@@ -39,64 +35,25 @@ public class Settings extends AppCompatActivity implements Constants {
             finish();
         });
 
-        initThemeChooser();
-    }
+        RadioButton lightThemeButton = findViewById(R.id.rbtnStandardTheme);
+        RadioButton nightThemeButton = findViewById(R.id.rbtnDarkTheme);
 
-    // Инициализация радиокнопок
-    private void initThemeChooser() {
-        initRadioButton(findViewById(R.id.rbtnStandardTheme),
-                AppThemeCode);
-        initRadioButton(findViewById(R.id.rbtnDarkTheme),
-                DarkThemeCode);
+        lightThemeButton.setOnClickListener(v -> {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+            SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
+            SharedPreferences.Editor editor = sharedPref.edit();
+            editor.putInt("themeIdentifier", 0);
+            editor.apply();
+            recreate();
+        });
 
-        RadioGroup rg = findViewById(R.id.radioButtons);
-        ((MaterialRadioButton) rg.getChildAt(getCodeStyle(AppThemeCode))).setChecked(true);
-    }
-
-    // Все инициализации кнопок очень похожи, поэтому создадим метод для переиспользования
-    private void initRadioButton(View button, final int codeStyle) {
-        button.setOnClickListener(v -> {
-
-            setAppTheme(codeStyle);
-
-
-            //попытка передачи данных в ActivityMain
-            Intent intentResultTheme = new Intent();
-            intentResultTheme.putExtra(keyToMainActivityTheme, codeStyle);
-            setResult(Activity.RESULT_OK, intentResultTheme);
-            System.out.println(intentResultTheme.getExtras() + " TRANSFERRED");
-            // пересоздадим активити, чтобы тема применилась
+        nightThemeButton.setOnClickListener(v -> {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+            SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
+            SharedPreferences.Editor editor = sharedPref.edit();
+            editor.putInt("themeIdentifier", 1);
+            editor.apply();
             recreate();
         });
     }
-
-    private int getAppTheme(int codeStyle) {
-        return codeStyleToStyleId(getCodeStyle(codeStyle));
-    }
-
-
-    private int getCodeStyle(int codeStyle) {
-        SharedPreferences sharedPref = getSharedPreferences(NameSharedPreference, MODE_PRIVATE);
-        return sharedPref.getInt(appTheme, codeStyle);
-    }
-
-    private void setAppTheme(int codeStyle) {
-        SharedPreferences sharedPref = getSharedPreferences(NameSharedPreference, MODE_PRIVATE);
-        // Настройки сохраняются посредством специального класса editor.
-        SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putInt(appTheme, codeStyle);
-        editor.apply();
-    }
-
-    private int codeStyleToStyleId(int codeStyle) {
-        switch (codeStyle) {
-            case AppThemeCode:
-                return R.style.AppTheme;
-            case DarkThemeCode:
-                return R.style.NightTheme;
-            default:
-                return R.style.AppTheme;
-        }
-    }
-
 }

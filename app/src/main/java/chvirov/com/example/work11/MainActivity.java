@@ -1,11 +1,14 @@
 package chvirov.com.example.work11;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -26,8 +29,10 @@ public class MainActivity extends AppCompatActivity implements Constants {
     protected double calculationResult;
     private char action = ' ';
     protected boolean isDotLast = false;
-    protected boolean isActionLast = false;
+    protected boolean isActionLast = true;
     protected boolean isResultLast = false;
+    protected boolean isFirstValueTyped = false;
+    protected boolean isSecondValueTyped = false;
 
     protected double valueBuffer = 0;
     private String textBuffer = "";
@@ -51,9 +56,7 @@ public class MainActivity extends AppCompatActivity implements Constants {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
-        setActivityTheme();
         setContentView(R.layout.activity_main);
 
         textViewResult = findViewById(R.id.textViewResult);
@@ -64,11 +67,13 @@ public class MainActivity extends AppCompatActivity implements Constants {
         // переход в Настройки
         btnSettings.setOnClickListener(v -> {
             Intent runSettings = new Intent(MainActivity.this, Settings.class);
-            startActivityForResult(runSettings, REQUEST_CODE_SETTING_ACTIVITY);
+            startActivity(runSettings);
         });
 
         // Обработка нажатия на кнопку РАВНО
         buttonResult.setOnClickListener(v -> {
+
+            isSecondValueTyped = false;
 
             if (isResultLast || isActionLast || isDotLast) {
                 //Do nothing
@@ -216,26 +221,16 @@ public class MainActivity extends AppCompatActivity implements Constants {
         });
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        System.out.println(data + " Result");
-        System.out.println(resultCode + " Result");
-        if (requestCode != REQUEST_CODE_SETTING_ACTIVITY) {
-            super.onActivityResult(requestCode, resultCode, data);
-            return;
-        }
-        if (resultCode == RESULT_CANCELED) {
-        }
-    }
 
+    //установка темы, выбранной в activity Settings
     private void setActivityTheme() {
+        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
+        themeIdentifier = sharedPref.getInt("themeIdentifier", 0);
         if (themeIdentifier == 0) {
-            setTheme(R.style.AppTheme);
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         } else if (themeIdentifier == 1) {
-            setTheme(R.style.NightTheme);
-        }
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);        }
     }
-
 
     private void updateViewsOnResult() {
 
@@ -271,6 +266,10 @@ public class MainActivity extends AppCompatActivity implements Constants {
                 textViewExpression.setText(overallText);
             }
 
+            if (isFirstValueTyped && isActionLast) {
+                isSecondValueTyped = true;
+            }
+            isFirstValueTyped = true;
             textBuffer = textBuffer + digit;
             textForValues = textBuffer;
             overallText = overallText + digit;
@@ -284,7 +283,7 @@ public class MainActivity extends AppCompatActivity implements Constants {
     // Добавление значения нажатой кнопки операции
     private void buttonOperation(char actionVarChar, String actionTextView) {
 
-        if (isDotLast || isActionLast) {
+        if (isDotLast || isActionLast || isSecondValueTyped) {
             //Do nothing
         } else {
 
@@ -301,6 +300,7 @@ public class MainActivity extends AppCompatActivity implements Constants {
         }
     }
 
+    //метод для кнопки CLEAR
     private void clearAll() {
         overallText = "";
         textViewResult.setText("");
@@ -309,16 +309,20 @@ public class MainActivity extends AppCompatActivity implements Constants {
         value2 = 0;
         textBuffer = "";
         textForValues = "";
-        isActionLast = false;
+        isActionLast = true;
         isResultLast = false;
         isDotLast = false;
+        isFirstValueTyped = false;
+        isSecondValueTyped = false;
     }
 
 
     @Override
     protected void onStart() {
         super.onStart();
+        setActivityTheme();
     }
+
 
     @Override
     protected void onSaveInstanceState(Bundle instanceState) {
@@ -363,6 +367,7 @@ public class MainActivity extends AppCompatActivity implements Constants {
     @Override
     protected void onResume() {
         super.onResume();
+//        setActivityTheme();
     }
 
     @Override

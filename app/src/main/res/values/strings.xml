@@ -1,29 +1,29 @@
 <resources>
-    <string name="app_name">Work1.1</string>
-    <string name="butt1">1</string>
-    <string name="butt2">2</string>
-    <string name="butt3">3</string>
-    <string name="butt4">4</string>
-    <string name="butt5">5</string>
-    <string name="butt6">6</string>
-    <string name="butt7">7</string>
-    <string name="butt8">8</string>
-    <string name="butt9">9</string>
-    <string name="butt0">0</string>
-    <string name="buttPt">.</string>
-    <string name="buttPlus">+</string>
-    <string name="buttMinus">-</string>
-    <string name="buttMultiply">*</string>
-    <string name="buttDivide">/</string>
-    <string name="buttPercent">%</string>
-    <string name="buttClear">CL</string>
-    <string name="buttResult">=</string>
-    <string name="textViewResult"></string>
+    <string name="app_name" translatable="false">Work1.1</string>
+    <string name="butt1" translatable="false">1</string>
+    <string name="butt2" translatable="false">2</string>
+    <string name="butt3" translatable="false">3</string>
+    <string name="butt4" translatable="false">4</string>
+    <string name="butt5" translatable="false">5</string>
+    <string name="butt6" translatable="false">6</string>
+    <string name="butt7" translatable="false">7</string>
+    <string name="butt8" translatable="false">8</string>
+    <string name="butt9" translatable="false">9</string>
+    <string name="butt0" translatable="false">0</string>
+    <string name="buttPt" translatable="false">.</string>
+    <string name="buttPlus" translatable="false">+</string>
+    <string name="buttMinus" translatable="false">-</string>
+    <string name="buttMultiply" translatable="false">*</string>
+    <string name="buttDivide" translatable="false">/</string>
+    <string name="buttPercent" translatable="false">%</string>
+    <string name="buttClear" translatable="false">CL</string>
+    <string name="buttResult" translatable="false">=</string>
+    <string name="_0" translatable="false">0</string>
     <string name="buttSettings">Settings</string>
-    <string name="_0">0</string>
-    <string name="counter_1">Counter on click</string>
-    <string name="counter_2">Counter click listener</string>
-    <string name="counter_4">Counter listener field</string>
+    <string name="settingsTextViewText">Theme:</string>
+    <string name="rBtnTextStandard">Standard</string>
+    <string name="rBtnTextDark">Dark</string>
+    <string name="btnBackText">Back</string>
 
 
 </resources>

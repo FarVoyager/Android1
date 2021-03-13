@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="btnBackText">Назад</string>
+    <string name="settingsTextViewText">Выбор темы:</string>
+    <string name="rBtnTextStandard">Стандартная</string>
+    <string name="rBtnTextDark">Темная</string>
+    <string name="buttSettings">Настройки</string>
+</resources>

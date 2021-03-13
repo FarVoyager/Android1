@@ -24,7 +24,6 @@
 
             android:background="#FFFFFF"
             android:backgroundTint="#DAD7D7"
-            android:text="@string/textViewResult"
             android:textSize="@dimen/textViewTextSizeLandScape" />
 
         <TextView
@@ -34,7 +33,6 @@
 
             android:background="#FFFFFF"
             android:backgroundTint="#DAD7D7"
-            android:text="@string/textViewResult"
             android:textSize="@dimen/textViewTextSizeLandScape" />
 
         <LinearLayout

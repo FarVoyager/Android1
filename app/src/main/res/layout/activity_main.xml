@@ -22,7 +22,7 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/textViewLayoutHeightPortrait"
             android:background="@color/grey"
-            android:text="@string/textViewResult"
+
             android:textColor="@color/light_grey_expression"
             android:textSize="@dimen/textViewTextSizePortrait" />
 
@@ -32,7 +32,6 @@
             android:layout_height="@dimen/textViewLayoutHeightPortrait"
             android:layout_marginBottom="@dimen/textViewResultMarginBottomPortrait"
             android:background="@color/grey"
-            android:text="@string/textViewResult"
             android:textColor="@color/black"
             android:textSize="@dimen/textViewTextSizePortrait" />
 
@@ -48,7 +47,8 @@
                 android:id="@+id/button1"
                 android:layout_width="@dimen/buttonLayoutWidthPortrait"
                 android:layout_height="@dimen/buttonLayoutHeightPortrait"
-                android:layout_margin="@dimen/buttonBaseMarginPortrait"
+                android:layout_marginLeft="@dimen/buttonBaseMarginPortrait"
+                android:layout_marginRight="@dimen/buttonBaseMarginPortrait"
                 android:layout_weight="1"
                 android:backgroundTint="@color/light_grey_buttons"
 
@@ -58,7 +58,8 @@
                 android:id="@+id/button2"
                 android:layout_width="@dimen/buttonLayoutWidthPortrait"
                 android:layout_height="@dimen/buttonLayoutHeightPortrait"
-                android:layout_margin="@dimen/buttonBaseMarginPortrait"
+                android:layout_marginLeft="@dimen/buttonBaseMarginPortrait"
+                android:layout_marginRight="@dimen/buttonBaseMarginPortrait"
                 android:layout_weight="1"
                 android:backgroundTint="@color/light_grey_buttons"
                 android:text="@string/butt2" />
@@ -68,7 +69,8 @@
                 android:layout_width="@dimen/buttonLayoutWidthPortrait"
 
                 android:layout_height="@dimen/buttonLayoutHeightPortrait"
-                android:layout_margin="@dimen/buttonBaseMarginPortrait"
+                android:layout_marginLeft="@dimen/buttonBaseMarginPortrait"
+                android:layout_marginRight="@dimen/buttonBaseMarginPortrait"
                 android:layout_weight="1"
                 android:backgroundTint="@color/light_grey_buttons"
                 android:text="@string/butt3" />
@@ -78,7 +80,8 @@
                 android:layout_width="@dimen/buttonLayoutWidthPortrait"
 
                 android:layout_height="@dimen/buttonLayoutHeightPortrait"
-                android:layout_margin="@dimen/buttonBaseMarginPortrait"
+                android:layout_marginLeft="@dimen/buttonBaseMarginPortrait"
+                android:layout_marginRight="@dimen/buttonBaseMarginPortrait"
                 android:layout_weight="1"
                 android:backgroundTint="@color/teal_700"
                 android:text="@string/buttDivide" />
@@ -88,7 +91,8 @@
                 android:id="@+id/buttonClear"
                 android:layout_width="@dimen/buttonLayoutWidthPortrait"
                 android:layout_height="@dimen/buttonLayoutHeightPortrait"
-                android:layout_margin="@dimen/buttonBaseMarginPortrait"
+                android:layout_marginLeft="@dimen/buttonBaseMarginPortrait"
+                android:layout_marginRight="@dimen/buttonBaseMarginPortrait"
 
                 android:layout_weight="1"
                 android:backgroundTint="@color/orange"
@@ -108,7 +112,8 @@
                 android:layout_width="@dimen/buttonLayoutWidthPortrait"
 
                 android:layout_height="@dimen/buttonLayoutHeightPortrait"
-                android:layout_margin="@dimen/buttonBaseMarginPortrait"
+                android:layout_marginLeft="@dimen/buttonBaseMarginPortrait"
+                android:layout_marginRight="@dimen/buttonBaseMarginPortrait"
                 android:layout_weight="1"
                 android:backgroundTint="@color/light_grey_buttons"
                 android:text="@string/butt4" />
@@ -117,7 +122,8 @@
                 android:id="@+id/button5"
                 android:layout_width="@dimen/buttonLayoutWidthPortrait"
                 android:layout_height="@dimen/buttonLayoutHeightPortrait"
-                android:layout_margin="@dimen/buttonBaseMarginPortrait"
+                android:layout_marginLeft="@dimen/buttonBaseMarginPortrait"
+                android:layout_marginRight="@dimen/buttonBaseMarginPortrait"
                 android:layout_weight="1"
                 android:backgroundTint="@color/light_grey_buttons"
                 android:text="@string/butt5" />
@@ -126,7 +132,8 @@
                 android:id="@+id/button6"
                 android:layout_width="@dimen/buttonLayoutWidthPortrait"
                 android:layout_height="@dimen/buttonLayoutHeightPortrait"
-                android:layout_margin="@dimen/buttonBaseMarginPortrait"
+                android:layout_marginLeft="@dimen/buttonBaseMarginPortrait"
+                android:layout_marginRight="@dimen/buttonBaseMarginPortrait"
                 android:layout_weight="1"
                 android:backgroundTint="@color/light_grey_buttons"
                 android:text="@string/butt6" />
@@ -136,7 +143,8 @@
                 android:layout_width="@dimen/buttonLayoutWidthPortrait"
 
                 android:layout_height="@dimen/buttonLayoutHeightPortrait"
-                android:layout_margin="@dimen/buttonBaseMarginPortrait"
+                android:layout_marginLeft="@dimen/buttonBaseMarginPortrait"
+                android:layout_marginRight="@dimen/buttonBaseMarginPortrait"
                 android:layout_weight="1"
                 android:backgroundTint="@color/teal_700"
                 android:text="@string/buttMultiply" />
@@ -146,7 +154,8 @@
                 android:layout_width="@dimen/buttonLayoutWidthPortrait"
 
                 android:layout_height="@dimen/buttonLayoutHeightPortrait"
-                android:layout_margin="@dimen/buttonBaseMarginPortrait"
+                android:layout_marginLeft="@dimen/buttonBaseMarginPortrait"
+                android:layout_marginRight="@dimen/buttonBaseMarginPortrait"
                 android:layout_weight="1"
                 android:backgroundTint="@color/teal_700"
                 android:text="@string/buttMinus" />
@@ -164,7 +173,8 @@
                 android:id="@+id/button7"
                 android:layout_width="@dimen/buttonLayoutWidthPortrait"
                 android:layout_height="@dimen/buttonLayoutHeightPortrait"
-                android:layout_margin="@dimen/buttonBaseMarginPortrait"
+                android:layout_marginLeft="@dimen/buttonBaseMarginPortrait"
+                android:layout_marginRight="@dimen/buttonBaseMarginPortrait"
                 android:layout_weight="1"
                 android:backgroundTint="@color/light_grey_buttons"
                 android:text="@string/butt7" />
@@ -173,7 +183,8 @@
                 android:id="@+id/button8"
                 android:layout_width="@dimen/buttonLayoutWidthPortrait"
                 android:layout_height="@dimen/buttonLayoutHeightPortrait"
-                android:layout_margin="@dimen/buttonBaseMarginPortrait"
+                android:layout_marginLeft="@dimen/buttonBaseMarginPortrait"
+                android:layout_marginRight="@dimen/buttonBaseMarginPortrait"
                 android:layout_weight="1"
                 android:backgroundTint="@color/light_grey_buttons"
                 android:text="@string/butt8" />
@@ -182,7 +193,8 @@
                 android:id="@+id/button9"
                 android:layout_width="@dimen/buttonLayoutWidthPortrait"
                 android:layout_height="@dimen/buttonLayoutHeightPortrait"
-                android:layout_margin="@dimen/buttonBaseMarginPortrait"
+                android:layout_marginLeft="@dimen/buttonBaseMarginPortrait"
+                android:layout_marginRight="@dimen/buttonBaseMarginPortrait"
                 android:layout_weight="1"
                 android:backgroundTint="@color/light_grey_buttons"
                 android:text="@string/butt9" />
@@ -191,7 +203,8 @@
                 android:id="@+id/buttonPlus"
                 android:layout_width="@dimen/buttonLayoutWidthPortrait"
                 android:layout_height="@dimen/buttonLayoutHeightPortrait"
-                android:layout_margin="@dimen/buttonBaseMarginPortrait"
+                android:layout_marginLeft="@dimen/buttonBaseMarginPortrait"
+                android:layout_marginRight="@dimen/buttonBaseMarginPortrait"
                 android:layout_weight="1"
                 android:backgroundTint="@color/teal_700"
                 android:text="@string/buttPlus" />
@@ -200,7 +213,8 @@
                 android:id="@+id/buttonPercent"
                 android:layout_width="@dimen/buttonLayoutWidthPortrait"
                 android:layout_height="@dimen/buttonLayoutHeightPortrait"
-                android:layout_margin="@dimen/buttonBaseMarginPortrait"
+                android:layout_marginLeft="@dimen/buttonBaseMarginPortrait"
+                android:layout_marginRight="@dimen/buttonBaseMarginPortrait"
                 android:layout_weight="1"
                 android:backgroundTint="@color/teal_700"
                 android:text="@string/buttPercent" />

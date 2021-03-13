@@ -26,8 +26,10 @@ public class MainActivity extends AppCompatActivity implements Constants {
     protected double calculationResult;
     private char action = ' ';
     protected boolean isDotLast = false;
-    protected boolean isActionLast = false;
+    protected boolean isActionLast = true;
     protected boolean isResultLast = false;
+    protected boolean isFirstValueTyped = false;
+    protected boolean isSecondValueTyped = false;
 
     protected double valueBuffer = 0;
     private String textBuffer = "";
@@ -69,6 +71,8 @@ public class MainActivity extends AppCompatActivity implements Constants {
 
         // Обработка нажатия на кнопку РАВНО
         buttonResult.setOnClickListener(v -> {
+
+            isSecondValueTyped = false;
 
             if (isResultLast || isActionLast || isDotLast) {
                 //Do nothing
@@ -271,6 +275,10 @@ public class MainActivity extends AppCompatActivity implements Constants {
                 textViewExpression.setText(overallText);
             }
 
+            if (isFirstValueTyped && isActionLast) {
+                isSecondValueTyped = true;
+            }
+            isFirstValueTyped = true;
             textBuffer = textBuffer + digit;
             textForValues = textBuffer;
             overallText = overallText + digit;
@@ -284,7 +292,7 @@ public class MainActivity extends AppCompatActivity implements Constants {
     // Добавление значения нажатой кнопки операции
     private void buttonOperation(char actionVarChar, String actionTextView) {
 
-        if (isDotLast || isActionLast) {
+        if (isDotLast || isActionLast || isSecondValueTyped) {
             //Do nothing
         } else {
 
@@ -309,9 +317,11 @@ public class MainActivity extends AppCompatActivity implements Constants {
         value2 = 0;
         textBuffer = "";
         textForValues = "";
-        isActionLast = false;
+        isActionLast = true;
         isResultLast = false;
         isDotLast = false;
+        isFirstValueTyped = false;
+        isSecondValueTyped = false;
     }
 
 
